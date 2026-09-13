@@ -1,0 +1,36 @@
+{
+  "name": "The Courtyard Apartment", "width": 9, "depth": 8, "height": 2.8,
+  "notes": ["Illustrative apartment authored for AI Concept Lab. No real address.", "Coordinates and dimensions are in metres. Room areas include wall centre lines.", "Window heights, finishes and furniture are design assumptions."],
+  "rooms": [
+    {"name":"Main bedroom","x":0,"z":0,"w":3.5,"d":3.2},
+    {"name":"Bathroom","x":3.5,"z":0,"w":2,"d":3.2},
+    {"name":"Bedroom / study","x":5.5,"z":0,"w":3.5,"d":3.2},
+    {"name":"Living / dining / kitchen","x":0,"z":3.2,"w":9,"d":4.8}
+  ],
+  "walls": [
+    {"x1":0,"z1":0,"x2":9,"z2":0},
+    {"x1":0,"z1":0,"x2":0,"z2":4.1},
+    {"x1":0,"z1":5.1,"x2":0,"z2":8},
+    {"x1":0,"z1":8,"x2":9,"z2":8},
+    {"x1":9,"z1":0,"x2":9,"z2":8},
+    {"x1":3.5,"z1":0,"x2":3.5,"z2":3.2},
+    {"x1":5.5,"z1":0,"x2":5.5,"z2":3.2},
+    {"x1":0,"z1":3.2,"x2":2.3,"z2":3.2},
+    {"x1":3.2,"z1":3.2,"x2":4.05,"z2":3.2},
+    {"x1":4.95,"z1":3.2,"x2":5.8,"z2":3.2},
+    {"x1":6.7,"z1":3.2,"x2":9,"z2":3.2}
+  ],
+  "furniture": [
+    {"id":"bed1","kind":"bed","x":1.65,"z":1.25,"w":1.7,"d":2.1,"rotation":0},
+    {"id":"bed2","kind":"bed","x":7.7,"z":1.25,"w":1.4,"d":2.1,"rotation":0},
+    {"id":"desk","kind":"desk","x":6.1,"z":1.1,"w":0.8,"d":1.5,"rotation":0},
+    {"id":"shower","kind":"shower","x":4.55,"z":0.65,"w":1.45,"d":1.0,"rotation":0},
+    {"id":"vanity","kind":"vanity","x":3.9,"z":2.05,"w":0.6,"d":0.9,"rotation":0},
+    {"id":"wc","kind":"toilet","x":5.03,"z":1.95,"w":0.55,"d":0.72,"rotation":0},
+    {"id":"kitchen","kind":"kitchen","x":1.6,"z":7.55,"w":3.0,"d":0.65,"rotation":0},
+    {"id":"dining","kind":"table","x":4.25,"z":5.3,"w":1.6,"d":0.85,"rotation":0},
+    {"id":"sofa","kind":"sofa","x":7.2,"z":5.3,"w":2.4,"d":1.05,"rotation":0},
+    {"id":"coffee","kind":"coffee","x":7.2,"z":6.75,"w":1.15,"d":0.6,"rotation":0},
+    {"id":"plant","kind":"plant","x":8.5,"z":7.45,"w":0.5,"d":0.5,"rotation":0}
+  ]
+}

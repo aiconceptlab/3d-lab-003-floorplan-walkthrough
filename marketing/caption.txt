@@ -1,0 +1,22 @@
+I gave AI a floor plan. Then I stepped inside.
+
+3D LAB // 003 — Floor Plan → Walkthrough
+
+A floor plan tells you where things go. Walking through the space helps you ask better questions.
+
+In this experiment, you can explore a furnished apartment, compare two dining tables and see what changes: a bigger table leaves a smaller gap to the sofa.
+
+The editable model handles the geometry. Higgsfield adds an eight-second cinematic concept with warm daylight, satin oak, matte plaster and soft linen.
+
+Upload your own plan, use the optional AI extraction, review the dimensions and build a model you can explore. You can also export it to Blender.
+
+This is a concept tool. Generated video can change details, so measurements come from the reviewed 3D model—not the film.
+
+The source code is free, and the included sample works without keys. Optional AI extraction and new generations use paid services.
+
+Comment “CODE” and I’ll send you the link.
+
+AI Concept Lab
+Testing AI ideas to find what’s worth building.
+
+#AIConceptLab #3DLab #Higgsfield #FloorPlan #InteriorDesign #AIArchitecture #BuildInPublic
