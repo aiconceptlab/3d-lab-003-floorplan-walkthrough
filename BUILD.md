@@ -29,7 +29,7 @@ The provider key stays server-side. Responses never include it. The local server
 
 ## 4. Higgsfield cinematic preview
 
-The supplied floor-plan image was used to generate one interior still. That still became the start frame for one slow, continuous eight-second architectural camera move. See [generation record](docs/generation.md). Reproduce manually with the included prompts or download a fresh brief from the app. This free code does not include free provider usage.
+The supplied floor-plan image was used to generate one interior still. Four reference interiors became four eight-second clips, assembled as a 32-second sequence with cuts between rooms. The separate 3D guided route follows the actual doorways for about 50 seconds. See [generation record](docs/generation.md). Reproduce manually with the included prompts or download a fresh brief from the app. This free code does not include free provider usage.
 
 Keep the generative preview labelled: it can alter walls, furniture or proportions. Never read dimensions from video pixels. The displayed table comparison comes from the JSON geometry only.
 

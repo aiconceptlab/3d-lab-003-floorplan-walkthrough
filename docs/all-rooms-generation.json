@@ -1,0 +1,251 @@
+{
+  "date": "2026-09-13",
+  "purpose": "Extend the concept film to every room",
+  "additionalCredits": 45,
+  "remainingCredits": 173,
+  "paidRetries": 0,
+  "stills": [
+    {
+      "index": 0,
+      "params": {
+        "model": "gpt_image_2_5",
+        "prompt": "Photorealistic architectural interior in the SAME modest apartment as reference image 1. Reference image 1 fixes the materials, grade and style; reference image 2 is the actual 9x8 metre floor plan. Generate only the named room, not the living room. Human-eye-level camera just inside its doorway; 24mm architectural lens, straight verticals. Consistent warm satin natural oak floor, ivory matte limewash walls, sage and cream linen, restrained oak joinery, brushed dark metal fixtures. Soft believable window daylight and bounce, broad subtle specular highlights, real fabric weave, no plastic gloss. Modest true residential proportions; premium interior photography, not a mansion. No text, logos, people, extra rooms or floorplan overlay. MAIN BEDROOM, northwest room measuring3.5m wide x3.2m deep. Camera at southeast doorway looking northwest. One 1.7m double bed centred near north wall, headboard against north wall, low oak bedside tables, ivory linen duvet and sage throw. Keep enough walking floor around the foot of bed. An illustrative west window supplies warm daylight; simple pale curtains. Show the whole room clearly including bed, side tables and window.",
+        "aspect_ratio": "16:9",
+        "quality": "high",
+        "resolution": "2k",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "0d2fd40a-db43-481f-9e9b-7513cd3e8c98"
+          },
+          {
+            "role": "image",
+            "value": "d49c7262-f516-498a-b77a-2bac06e4e8c6"
+          }
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "params": {
+        "model": "gpt_image_2_5",
+        "prompt": "Photorealistic architectural interior in the SAME modest apartment as reference image 1. Reference image 1 fixes the materials, grade and style; reference image 2 is the actual 9x8 metre floor plan. Generate only the named room, not the living room. Human-eye-level camera just inside its doorway; 24mm architectural lens, straight verticals. Consistent warm satin natural oak floor, ivory matte limewash walls, sage and cream linen, restrained oak joinery, brushed dark metal fixtures. Soft believable window daylight and bounce, broad subtle specular highlights, real fabric weave, no plastic gloss. Modest true residential proportions; premium interior photography, not a mansion. No text, logos, people, extra rooms or floorplan overlay. BATHROOM, compact central north room measuring2m wide x3.2m deep. Camera from its south doorway looking north. Shower across rear wall with transparent glass screen, brushed dark showerhead. Floating oak vanity and pale honed stone basin to left; white toilet at right. Limestone tile floor and matte ivory plaster, natural diffused light from subtle ceiling skylight. Keep toilet and shower fixtures distinct, realistic and room comprehensible. No bathtub or extravagant spa.",
+        "aspect_ratio": "16:9",
+        "quality": "high",
+        "resolution": "2k",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "0d2fd40a-db43-481f-9e9b-7513cd3e8c98"
+          },
+          {
+            "role": "image",
+            "value": "d49c7262-f516-498a-b77a-2bac06e4e8c6"
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "params": {
+        "model": "gpt_image_2_5",
+        "prompt": "Photorealistic architectural interior in the SAME modest apartment as reference image 1. Reference image 1 fixes the materials, grade and style; reference image 2 is the actual 9x8 metre floor plan. Generate only the named room, not the living room. Human-eye-level camera just inside its doorway; 24mm architectural lens, straight verticals. Consistent warm satin natural oak floor, ivory matte limewash walls, sage and cream linen, restrained oak joinery, brushed dark metal fixtures. Soft believable window daylight and bounce, broad subtle specular highlights, real fabric weave, no plastic gloss. Modest true residential proportions; premium interior photography, not a mansion. No text, logos, people, extra rooms or floorplan overlay. BEDROOM / STUDY, northeast room measuring3.5m wide x3.2m deep. Camera from southwest doorway looking northeast. A single 1.4m bed towards the right/north wall, warm oak desk with one slim monitor along left wall, sage throw and cream bedding. East-facing daylight window with soft cream curtains, a quiet guest room/home office. Show bed AND desk together clearly. No second desk, no sofa, no added rooms.",
+        "aspect_ratio": "16:9",
+        "quality": "high",
+        "resolution": "2k",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "0d2fd40a-db43-481f-9e9b-7513cd3e8c98"
+          },
+          {
+            "role": "image",
+            "value": "d49c7262-f516-498a-b77a-2bac06e4e8c6"
+          }
+        ]
+      }
+    }
+  ],
+  "videos": [
+    {
+      "index": 0,
+      "params": {
+        "model": "cinematic_studio_video_v2",
+        "aspect_ratio": "16:9",
+        "duration": 8,
+        "mode": "pro",
+        "sound": "off",
+        "speedramp": "linear",
+        "multi_shots": false,
+        "cfg_scale": 0.8,
+        "count": 1,
+        "medias": [
+          {
+            "role": "start_image",
+            "value": "2b5186e6-a0ce-49f0-ab6f-8c799f750672"
+          }
+        ],
+        "prompt": "A single continuous 8-second architectural shot of this exact Main bedroom. Stay near the doorway and slowly slide the camera 35 cm to the left, gently pan to reveal the bed and both bedside tables. Do not advance onto the bed. Human eye-level 1.6m, stable 24mm lens, straight vertical lines. Preserve every wall, door, window and item of furniture exactly as in the supplied frame. Match warm natural daylight, matte limewash, satin oak, soft linen sheen and realistic brushed metal/glass specularity. Subtle soft shadows and stable exposure, protected highlights, no plastic-looking gloss. No people, no added objects, no doors moving, no morphing, no cuts, no teleportation, no text. This shot is one room in a room-by-room apartment tour."
+      }
+    },
+    {
+      "index": 1,
+      "params": {
+        "model": "cinematic_studio_video_v2",
+        "aspect_ratio": "16:9",
+        "duration": 8,
+        "mode": "pro",
+        "sound": "off",
+        "speedramp": "linear",
+        "multi_shots": false,
+        "cfg_scale": 0.8,
+        "count": 1,
+        "medias": [
+          {
+            "role": "start_image",
+            "value": "812f2851-073c-4917-8f6b-cea0091a1ab8"
+          }
+        ],
+        "prompt": "A single continuous 8-second architectural shot of this exact Bathroom. Move very slowly forward 30 cm from the doorway, keeping the vanity, toilet and shower visible together. End before reaching the fixtures. Show reflections in shower glass and mirror without inventing a camera/person reflection. Human eye-level 1.6m, stable 24mm lens, straight vertical lines. Preserve every wall, door, window and item of furniture exactly as in the supplied frame. Match warm natural daylight, matte limewash, satin oak, soft linen sheen and realistic brushed metal/glass specularity. Subtle soft shadows and stable exposure, protected highlights, no plastic-looking gloss. No people, no added objects, no doors moving, no morphing, no cuts, no teleportation, no text. This shot is one room in a room-by-room apartment tour."
+      }
+    },
+    {
+      "index": 2,
+      "params": {
+        "model": "cinematic_studio_video_v2",
+        "aspect_ratio": "16:9",
+        "duration": 8,
+        "mode": "pro",
+        "sound": "off",
+        "speedramp": "linear",
+        "multi_shots": false,
+        "cfg_scale": 0.8,
+        "count": 1,
+        "medias": [
+          {
+            "role": "start_image",
+            "value": "81141e11-3b72-46cc-9152-e5ceccec0e91"
+          }
+        ],
+        "prompt": "A single continuous 8-second architectural shot of this exact Bedroom / study. Slowly slide 40 cm forward into the open aisle between the desk and bed, with a gentle pan from the desk towards the bed. Stop before the furniture. Human eye-level 1.6m, stable 24mm lens, straight vertical lines. Preserve every wall, door, window and item of furniture exactly as in the supplied frame. Match warm natural daylight, matte limewash, satin oak, soft linen sheen and realistic brushed metal/glass specularity. Subtle soft shadows and stable exposure, protected highlights, no plastic-looking gloss. No people, no added objects, no doors moving, no morphing, no cuts, no teleportation, no text. This shot is one room in a room-by-room apartment tour."
+      }
+    }
+  ],
+  "stillJobs": {
+    "jobs": [
+      {
+        "index": 0,
+        "job_id": "2b5186e6-a0ce-49f0-ab6f-8c799f750672",
+        "status": "pending",
+        "adjustments": {
+          "medias[0].role": {
+            "requested": "image",
+            "used": "image_references",
+            "reason": "GPT Image 2.5 backend expects schema-key media roles"
+          },
+          "medias[1].role": {
+            "requested": "image",
+            "used": "image_references",
+            "reason": "GPT Image 2.5 backend expects schema-key media roles"
+          }
+        }
+      },
+      {
+        "index": 1,
+        "job_id": "812f2851-073c-4917-8f6b-cea0091a1ab8",
+        "status": "pending",
+        "adjustments": {
+          "medias[0].role": {
+            "requested": "image",
+            "used": "image_references",
+            "reason": "GPT Image 2.5 backend expects schema-key media roles"
+          },
+          "medias[1].role": {
+            "requested": "image",
+            "used": "image_references",
+            "reason": "GPT Image 2.5 backend expects schema-key media roles"
+          }
+        }
+      },
+      {
+        "index": 2,
+        "job_id": "81141e11-3b72-46cc-9152-e5ceccec0e91",
+        "status": "pending",
+        "adjustments": {
+          "medias[0].role": {
+            "requested": "image",
+            "used": "image_references",
+            "reason": "GPT Image 2.5 backend expects schema-key media roles"
+          },
+          "medias[1].role": {
+            "requested": "image",
+            "used": "image_references",
+            "reason": "GPT Image 2.5 backend expects schema-key media roles"
+          }
+        }
+      }
+    ],
+    "submitted_count": 3,
+    "failed_count": 0
+  },
+  "videoJobs": {
+    "jobs": [
+      {
+        "index": 0,
+        "job_id": "02b8c228-3250-4a77-b352-aac72503c098",
+        "status": "pending",
+        "adjustments": {
+          "params.genre": {
+            "requested": "(unset)",
+            "used": "auto",
+            "reason": "default for model"
+          },
+          "params.multi_shot_mode": {
+            "requested": "(unset)",
+            "used": "custom",
+            "reason": "default for model"
+          }
+        }
+      },
+      {
+        "index": 1,
+        "job_id": "819c2764-14e1-49d0-9b3f-889e0edf12d2",
+        "status": "pending",
+        "adjustments": {
+          "params.genre": {
+            "requested": "(unset)",
+            "used": "auto",
+            "reason": "default for model"
+          },
+          "params.multi_shot_mode": {
+            "requested": "(unset)",
+            "used": "custom",
+            "reason": "default for model"
+          }
+        }
+      },
+      {
+        "index": 2,
+        "job_id": "1079e5a4-3708-4a84-a50b-93ebce56220f",
+        "status": "pending",
+        "adjustments": {
+          "params.genre": {
+            "requested": "(unset)",
+            "used": "auto",
+            "reason": "default for model"
+          },
+          "params.multi_shot_mode": {
+            "requested": "(unset)",
+            "used": "custom",
+            "reason": "default for model"
+          }
+        }
+      }
+    ],
+    "submitted_count": 3,
+    "failed_count": 0
+  }
+}

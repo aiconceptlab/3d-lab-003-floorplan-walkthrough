@@ -24,7 +24,8 @@ Open **http://127.0.0.1:3016**. The included 72 m² apartment, furniture compari
 2. Select **Walk inside**. Use arrows/WASD or the on-screen controls. Left/right turn; up/down move.
 3. Compare the four-seat and six-seat dining tables. The table-to-sofa edge gap changes from **0.95 m to 0.65 m**, calculated from the same geometry used to render them.
 4. Export the reviewed JSON, a PNG view, a furnished GLB, or a Higgsfield generation brief.
-5. Play the included eight-second cinematic concept below the model.
+5. Select **Tour all rooms** for a roughly 50-second route through the entrance, kitchen, living area, main bedroom, bathroom and bedroom/study. Pause, scrub or jump to any stop. The route uses door gaps and avoids primary furniture including dining chairs.
+6. Play the included 32-second cinematic concept below the model.
 
 The edge gap excludes pulled-out chairs and people. It is not an accessibility assessment or a recommended minimum clearance.
 
@@ -44,7 +45,7 @@ The AI extracts an approximate, single-storey rectangular-room schema. This star
 | AI extraction | Server-side OpenAI Responses API with an image and strict structured output; optional paid API. |
 | Materials | Physical materials with separate roughness, fabric sheen, oak microstructure, stone clearcoat and metal reflections. |
 | Lighting | Warm directional daylight, cooler fill, environment reflections, contact shadows and ACES tone mapping. |
-| Cinematic preview | One actual Higgsfield-generated interior still followed by one actual eight-second video. |
+| Cinematic preview | Four actual Higgsfield clips assembled into a 32-second room-by-room concept tour. |
 | Blender | Export a GLB and import it into Blender; an optional import/camera/light script is included. Blender was not used to generate the included film. |
 
 **The film is an AI interpretation of the sample plan, not a dimensionally exact render of the GLB.** It changes details, including chair count. Use the editable model for geometric comparisons, and the film for mood/material presentation. The film does not change when you edit your plan. This app does not submit Higgsfield jobs automatically.

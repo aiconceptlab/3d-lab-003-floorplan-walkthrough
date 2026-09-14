@@ -24,7 +24,7 @@ const slides=[
    text('Swipe from plan to possibility →',72,1197,30,C.accent,500)
  )],
  ['02-plan-to-space',frame(2,
-   lines(['A drawing becomes','a space to explore.'],72,219,67,78)+
+   lines(['A drawing becomes','a tour of every room.'],72,219,67,78)+
    text('UPLOAD. REVIEW. WALK INSIDE.',72,362,25,C.accent,600)+
    rect(72,414,304,404,'#f8f5ee')+image('public/sample/floorplan.png',82,452,284,310,'xMidYMid meet')+
    image('marketing/screenshots/dollhouse.jpg',398,414,610,404,'xMidYMid meet')+
@@ -33,11 +33,11 @@ const slides=[
    rect(72,1064,936,120)+text('Your plan, your review.',100,1108,30,C.ink,600)+text('Check scale and door openings before building the model.',100,1157,26,C.muted)
  )],
  ['03-materials',frame(3,
-   lines(['Make the space','feel believable.'],72,219,76,85)+
+   lines(['Every room.','One coherent style.'],72,219,76,85)+
    text('MATERIALS. LIGHT. REFLECTIONS.',72,370,25,C.accent,600)+
-   image(hero,72,426,936,530)+
-   lines(['Satin oak. Matte plaster. Soft linen.', 'Daylight, gentle shadows and restrained reflections.'],72,1018,31,46,C.ink,400)+
-   text('Actual Higgsfield output · 8-second concept film included',72,1179,27,C.accent)
+   image('public/assets/tour-room-0.jpg',72,426,936,325)+image('public/assets/tour-room-1.jpg',72,768,456,258)+image('public/assets/tour-room-2.jpg',552,768,456,258)+
+   lines(['Satin oak. Matte plaster. Soft linen.', 'Daylight, gentle shadows and restrained reflections.'],72,1080,29,42,C.ink,400)+
+   text('Actual Higgsfield output · 32-second room-by-room film included',72,1179,27,C.accent)
  )],
  ['04-decision',frame(4,
    lines(['See the trade-off','before you buy it.'],72,219,72,82)+

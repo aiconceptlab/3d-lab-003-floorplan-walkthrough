@@ -1,5 +1,15 @@
 # Release validation — 13 September 2026
 
+## All-room tour revision
+
+- Eleven Node tests pass, including clear routes for both table sizes, coverage of every sample room, a custom two-room plan, and rejection of a sealed bathroom doorway.
+- The sample guided route runs for 50.3 seconds, through the entrance/dining area, kitchen, living area, main bedroom, bathroom and bedroom/study. Automatic completion, pause, room jumps, scrubbing and replay were exercised in the browser.
+- Navigation checks walls, furniture and a conservative dining-chair footprint. It reports an obstructed/unreachable route rather than travelling through a wall.
+- The cinematic asset is now 32 seconds: four eight-second Higgsfield clips with room labels and cuts. Three additional stills and three additional clips cost 45 credits, with no paid retries. The earlier eight-second living clip is reused.
+- The five Instagram slides remain 1080 × 1350 (4:5); the room slide now shows both bedrooms and the bathroom.
+
+The checks below describe the initial release; its eight-second film has been superseded by this revision.
+
 ## Passed
 
 - Seven Node tests: sample geometry and independent table gaps; invalid/out-of-bounds/duplicate geometry; escaped labels and field filtering; Responses API strict-image contract; missing credentials/provider errors/refusal; local server token/origin/dotfile protection; rejection of a mismatched generated scale.

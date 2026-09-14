@@ -1,6 +1,14 @@
 # Higgsfield generation record
 
-Produced 13 September 2026. One still and one video; no paid retries.
+Produced 13 September 2026. The initial living-area shot was extended to all rooms. Four stills and four video clips in total; no paid retries.
+
+## All-room revision
+
+Three additional room stills (main bedroom, bathroom, bedroom/study) used the floor plan and accepted living-area image as references. Each still became one eight-second clip. The three pairs cost 45 additional credits, taking the balance from 218 to 173. Total generation cost for this project: 60 credits.
+
+The original living clip and three new clips are assembled in that order, with chapter cuts and room labels, into `public/assets/walkthrough.mp4`: 32 seconds, 1280 × 720, 24 fps, silent. The clips are individual AI interpretations; they do not show a continuous passage through the apartment. The app's separate 50-second geometry-based tour follows actual doorways.
+
+Full new requests and job identifiers are in [all-rooms-generation.json](all-rooms-generation.json). [assemble-tour.jsx](assemble-tour.jsx) is the Higgsedit composition: provide the four source clips as `/home/user/clip0.mp4` through `clip3.mp4`, then run it with Higgsedit in its supported environment. The initial generation details below remain for provenance.
 
 - Still: gpt_image_2_5, high quality, 2k, 16:9 requested, returned 2688 × 1520. 3 credits. Job 0d2fd40a-db43-481f-9e9b-7513cd3e8c98.
 - Video: cinematic_studio_video_v2, pro, sound off, 8 seconds, 16:9 requested, returned 1344 × 768. 12 credits. Job 15be1be5-d32b-470e-ab62-ef22d856b830.
@@ -19,4 +27,3 @@ Architectural walkthrough of the exact apartment in the supplied start image. On
 ## Interpretation limits
 
 The still added chairs and reinterpreted some positions despite the prompt. The film is a mood and material study. It must not be presented as measured reconstruction or proof of a floor-plan dimension. The editable model has an independent explicit geometry source.
-

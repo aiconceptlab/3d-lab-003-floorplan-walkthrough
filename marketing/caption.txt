@@ -6,7 +6,7 @@ A floor plan tells you where things go. Walking through the space helps you ask 
 
 In this experiment, you can explore a furnished apartment, compare two dining tables and see what changes: a bigger table leaves a smaller gap to the sofa.
 
-The editable model handles the geometry. Higgsfield adds an eight-second cinematic concept with warm daylight, satin oak, matte plaster and soft linen.
+The editable model takes you through every room along a continuous route. Higgsfield adds a 32-second room-by-room cinematic sequence with warm daylight, satin oak, matte plaster and soft linen.
 
 Upload your own plan, use the optional AI extraction, review the dimensions and build a model you can explore. You can also export it to Blender.
 

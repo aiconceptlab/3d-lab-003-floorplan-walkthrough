@@ -3,6 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import {buildTour,tourPose,blocked} from './tour.mjs';
 import { materialLibrary } from './materials.mjs';
 export function createViewer(host,onRoom=()=>{}) {
   const scene=new T.Scene(); scene.background=new T.Color('#e9e5dc');
@@ -17,7 +18,7 @@ export function createViewer(host,onRoom=()=>{}) {
   scene.add(new T.HemisphereLight(0xf8f7eb,0x8f897a,.9));
   const sun=new T.DirectionalLight(0xffeccb,2.6);sun.position.set(3,10,8);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-12,right:12,top:12,bottom:-12});sun.shadow.bias=-.0003;sun.shadow.normalBias=.035;scene.add(sun);
   const fill=new T.DirectionalLight(0xddeaff,.5);fill.position.set(-5,5,-5);scene.add(fill);
-  let group=new T.Group();scene.add(group);let walls=[],plan,walking=false,touring=false,tourTime=0,last=performance.now(),yaw=0,keys=new Set(),animation,disposed=false;
+  let group=new T.Group();scene.add(group);let walls=[],plan,walking=false,touring=false,tourTime=0,tour=null,paused=false,last=performance.now(),yaw=0,keys=new Set(),animation,disposed=false;
   const mats={};
   const surface=materialLibrary();
   const mat=(color,roughness=.65,metalness=0)=>mats[color+roughness+metalness]??=(new T.MeshStandardMaterial({color,roughness,metalness}));
@@ -87,27 +88,31 @@ export function createViewer(host,onRoom=()=>{}) {
     view('orbit');
   }
   function view(mode){
-    walking=mode==='walk';touring=mode==='tour';tourTime=0;keys.clear();controls.enabled=mode==='orbit';
+    if(mode==='tour')tour=buildTour(plan);
+    walking=mode==='walk';touring=mode==='tour';tourTime=0;paused=false;keys.clear();controls.enabled=mode==='orbit';
     if(mode==='orbit'){camera.position.set(plan.width*1.35,plan.width*.98,plan.depth*1.43);controls.target.set(plan.width/2,0,plan.depth/2);controls.update();}
     else{const r=plan.rooms.at(-1);camera.position.set(Math.min(plan.width-.4,Math.max(.4,r.x+.65)),1.6,Math.min(plan.depth-.4,r.z+r.d*.4));yaw=-Math.PI/2;look();renderer.domElement.focus();}
     group.traverse(o=>{if(/illustrative|window mullion|window sill/.test(o.name))o.visible=mode!=='orbit';});
     walls.forEach(w=>{w.scale.y=mode==='orbit'?.37:1;w.position.y=plan.height*w.scale.y/2;});
   }
   function look(){camera.lookAt(camera.position.x-Math.sin(yaw),camera.position.y-.02,camera.position.z-Math.cos(yaw));}
-  function collides(x,z){
-    if(x<.23||z<.23||x>plan.width-.23||z>plan.depth-.23)return true;
-    for(const w of plan.walls){const dx=w.x2-w.x1,dz=w.z2-w.z1,t=T.MathUtils.clamp(((x-w.x1)*dx+(z-w.z1)*dz)/(dx*dx+dz*dz),0,1);if(Math.hypot(x-w.x1-t*dx,z-w.z1-t*dz)<.26)return true;}
-    return plan.furniture.some(f=>{const a=f.rotation*Math.PI/180,dx=x-f.x,dz=z-f.z,lx=dx*Math.cos(a)+dz*Math.sin(a),lz=-dx*Math.sin(a)+dz*Math.cos(a);return Math.abs(lx)<f.w/2+.18&&Math.abs(lz)<f.d/2+.18;});
-  }
+  const collides=(x,z)=>blocked(plan,x,z);
   const keydown=e=>{if(!walking||!host.contains(document.activeElement))return;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d'].includes(e.key)){e.preventDefault();keys.add(e.key);}};
   const keyup=e=>keys.delete(e.key);window.addEventListener('keydown',keydown);window.addEventListener('keyup',keyup);window.addEventListener('blur',()=>keys.clear());
   const resize=()=>{const {width,height}=host.getBoundingClientRect();renderer.setSize(width,height);camera.aspect=width/Math.max(1,height);camera.updateProjectionMatrix();};const ro=new ResizeObserver(resize);ro.observe(host);
   function tick(now){if(disposed)return;const dt=Math.min((now-last)/1000,.05);last=now;
     if(walking){if(keys.has('ArrowLeft')||keys.has('a'))yaw+=dt*1.5;if(keys.has('ArrowRight')||keys.has('d'))yaw-=dt*1.5;const step=(Number(keys.has('ArrowUp')||keys.has('w'))-Number(keys.has('ArrowDown')||keys.has('s')))*dt*1.35;const x=camera.position.x-Math.sin(yaw)*step,z=camera.position.z-Math.cos(yaw)*step;if(!collides(x,camera.position.z))camera.position.x=x;if(!collides(camera.position.x,z))camera.position.z=z;look();}
-    if(touring){tourTime+=dt;const r=plan.rooms.at(-1),t=(Math.sin(tourTime*.13-Math.PI/2)+1)/2;camera.position.set(r.x+.55+t*(r.w*.22),1.65,r.z+r.d*.38);camera.lookAt(r.x+r.w*.76,1,r.z+r.d*.65);}
+    if(touring){
+      if(!paused)tourTime=Math.min(tour.duration,tourTime+dt);
+      const pose=tourPose(tour,tourTime);camera.position.set(pose.x,1.6,pose.z);
+      const target=new T.Vector3(pose.look.x,pose.moving?1.6:1.05,pose.look.z);
+      if(target.distanceTo(camera.position)>.02){const m=new T.Matrix4().lookAt(camera.position,target,camera.up),q=new T.Quaternion().setFromRotationMatrix(m);camera.quaternion.slerp(q,1-Math.exp(-dt*3));}
+      if(pose.done)paused=true;
+      onRoom({name:pose.name,progress:pose.progress,paused,done:pose.done,time:tourTime,duration:tour.duration,stops:tour.stops,segments:tour.segments});
+    }
     if(controls.enabled)controls.update();renderer.render(scene,camera);animation=requestAnimationFrame(tick);
   }animation=requestAnimationFrame(tick);
-  return {build,view,move:key=>keys.add(key),stop:()=>keys.clear(),snapshot:()=>renderer.domElement.toDataURL('image/png'),
+  return {build,view,pauseTour:()=>{if(tourTime>=tour.duration)tourTime=0;paused=!paused;},seekTour:f=>{tourTime=Math.max(0,Math.min(1,f))*tour.duration;},move:key=>keys.add(key),stop:()=>keys.clear(),snapshot:()=>renderer.domElement.toDataURL('image/png'),
     exportGLB:async()=>{const ground=group.getObjectByName('presentation ground');ground.visible=false;const windows=[];group.traverse(o=>{if(/illustrative|window mullion|window sill/.test(o.name)){windows.push([o,o.visible]);o.visible=true;}});const old=walls.map(w=>[w.scale.y,w.position.y]);walls.forEach(w=>{w.scale.y=1;w.position.y=plan.height/2;});try{return await new GLTFExporter().parseAsync(group,{binary:true});}finally{ground.visible=true;windows.forEach(([o,v])=>o.visible=v);walls.forEach((w,i)=>{[w.scale.y,w.position.y]=old[i];});}},
     dispose(){disposed=true;cancelAnimationFrame(animation);ro.disconnect();window.removeEventListener('keydown',keydown);window.removeEventListener('keyup',keyup);clear();surface.dispose();Object.values(mats).forEach(m=>m.dispose());scene.environment.dispose();controls.dispose();renderer.dispose();}
   };
